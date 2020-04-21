@@ -17,20 +17,6 @@
 // Replace with your domain/IP address.
 //const char* server = "esp.local";
 
-void setup() {
-  Serial.begin(115200);
-
-  initWifi();
-  makeRequest();
-
-  // Deep sleep mode until RESET pin is connected to a LOW signal (pushbutton is pressed)
-  ESP.deepSleep(0);
-}
-
-void loop() {
-  // sleeping so wont get here
-}
-
 // Establish a Wi-Fi connection with your router
 void initWifi() {
   Serial.print("Connecting to: ");
@@ -90,3 +76,18 @@ void makeRequest() {
   Serial.println("\nclosing connection");
   client.stop();
 }
+
+void setup() {
+  Serial.begin(115200);
+
+  initWifi();
+  makeRequest();
+
+  // Deep sleep mode until RESET pin is connected to a LOW signal (pushbutton is pressed)
+  ESP.deepSleep(0);
+}
+
+void loop() {
+  // sleeping so wont get here
+}
+
